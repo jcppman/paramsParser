@@ -32,7 +32,12 @@ ParamsParser.prototype.parse = function (inStr) {
     if (reg) {
 
       var regResult = inStr.match(reg);
-      result = getter(regResult);
+      
+      if (regResult) {
+
+        result = getter(regResult);
+      
+      }
     
     } else {
 

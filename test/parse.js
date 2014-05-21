@@ -13,11 +13,7 @@ describe('parse', function () {
         reg: /test:(\d+)/,
         getter: function (result) {
 
-          if (result) {
-          
-            return result[1];
-
-          }
+          return result[1];
 
         }
     
