@@ -17,7 +17,7 @@ into it, it will return a parser based on the rules.
 var ParamsParser = require('paramsParser');
 var rules = [rule1, rule2, rule3];
 var parser = new ParamsParser(rules);
-var params = parser(inputString);
+var params = parser.parse(inputString);
 ```
 
 The parser will apply the rules one by one to the input string, till he make a 
@@ -59,7 +59,7 @@ var rule = {
 try {
 
   var parser = new ParamsParser([rule]);
-  var params = parser('http://www.fizz.com/buzz.html');
+  var params = parser.parse('http://www.fizz.com/buzz.html');
   console.log(params.url); // http://www.fizz.com/buzz.html
   console.log(params.host); // www.fizz.com
   console.log(params.path); // /buzz.html
@@ -100,7 +100,7 @@ var parser = new ParamsParser([rule]);
 
 try {
 
-  var params = parser('http://www.booo.com/search.html');
+  var params = parser.parse('http://www.booo.com/search.html');
   console.log(params.url); // http://www.booo.com/search.html
   console.log(params.path); // search.html
   console.log(params.fizz); // buzz
